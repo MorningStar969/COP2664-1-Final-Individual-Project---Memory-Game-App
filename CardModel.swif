@@ -1,0 +1,16 @@
+import SwiftUI
+
+class CardModel: ObservableObject, Identifiable {
+    var id = UUID()
+    @Published var isFaceUp: Bool = false
+    @Published var isMatched: Bool = false
+    var text: String // This class will be used to create a card object that will be used in the game. It will have a text property that will be used to display the text on the card. It will also have a isFaceUp property that will be used to determine if the card is face up or not. It will also have a isMatched property that will be used to determine if the card is matched or not.
+
+    init(text: String) {
+        self.text = text
+    } // This is the initializer for the CardModel class. It will take a text parameter and set the text property to the value of the text parameter.
+
+    func turnFaceUp() {
+        isFaceUp.toggle()
+    }
+} // This is a method that will be used to turn the card face up. It will toggle the isFaceUp property.
